@@ -1,10 +1,3 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
-
 import React from 'react';
 import {Button, SafeAreaView} from 'react-native';
 import {ApolloTestComponent} from './App-apollo';
@@ -16,10 +9,15 @@ function App(): JSX.Element {
   return (
     <SafeAreaView style={{backgroundColor: '#333'}}>
       <Button
-        title="Click me"
+        title="Load Apollo Component"
         onPress={() => setIsApolloComponentVisible(true)}
       />
       {isApolloComponentVisible && <ApolloTestComponent />}
+
+      <Button
+        title="fetch() Google.com"
+        onPress={() => fetch('https://google.com')}
+      />
     </SafeAreaView>
   );
 }
