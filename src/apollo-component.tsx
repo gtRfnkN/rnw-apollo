@@ -10,7 +10,7 @@ const client = new ApolloClient({
 export function ApolloTestComponent() {
   return (
     <ApolloProvider client={client}>
-      <View style={{backgroundColor: '#f00', padding: 32}}>
+      <View style={{backgroundColor: '#007700', padding: 32}}>
         <Text>Apollo is working</Text>
       </View>
     </ApolloProvider>
