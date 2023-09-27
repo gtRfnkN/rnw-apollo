@@ -7,6 +7,7 @@
 
 import React from 'react';
 import {Button, SafeAreaView} from 'react-native';
+import {ApolloTestComponent} from './App-apollo';
 
 function App(): JSX.Element {
   const [isApolloComponentVisible, setIsApolloComponentVisible] =
@@ -18,12 +19,7 @@ function App(): JSX.Element {
         title="Click me"
         onPress={() => setIsApolloComponentVisible(true)}
       />
-      {isApolloComponentVisible && (
-        <Button
-          title="Hide me"
-          onPress={() => setIsApolloComponentVisible(false)}
-        />
-      )}
+      {isApolloComponentVisible && <ApolloTestComponent />}
     </SafeAreaView>
   );
 }
