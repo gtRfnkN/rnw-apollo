@@ -15,7 +15,7 @@ namespace rwnapollo
             InstanceSettings.UseFastRefresh = false;
 #else
             JavaScriptBundleFile = "index";
-            InstanceSettings.UseWebDebugger = true;
+            InstanceSettings.UseWebDebugger = false;
             InstanceSettings.UseFastRefresh = true;
 #endif
 
