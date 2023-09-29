@@ -7,7 +7,7 @@ import {
   gql,
 } from '@apollo/client';
 import {Text, View, ScrollView} from 'react-native';
-import {Image} from 'react-native-windows';
+import {Image, Button} from 'react-native-windows';
 
 const client = new ApolloClient({
   uri: 'https://flyby-router-demo.herokuapp.com/',
@@ -26,18 +26,26 @@ const GET_LOCATIONS = gql`
 `;
 
 export function ApolloTestComponent() {
+  const [queryUpdateIndex, setQueryUpdateIndex] = React.useState(0);
+
   return (
     <ApolloProvider client={client}>
       <View style={{backgroundColor: '#007700', padding: 32}}>
         <Text>Apollo is working</Text>
-        <DisplayLocations />
+        <Button
+          title="refresh this view"
+          onPress={() => setQueryUpdateIndex(i => i + 1)}
+        />
+        <DisplayLocations key={queryUpdateIndex} />
       </View>
     </ApolloProvider>
   );
 }
 
 function DisplayLocations() {
-  const {loading, error, data} = useQuery(GET_LOCATIONS);
+  const {loading, error, data} = useQuery(GET_LOCATIONS, {
+    fetchPolicy: 'no-cache',
+  });
 
   if (loading) {
     return <Text>Loading Data</Text>;
