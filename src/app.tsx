@@ -2,6 +2,7 @@ import React from 'react';
 import {Button, SafeAreaView} from 'react-native';
 import {ApolloTestComponent} from './apollo-component';
 import {Text, View} from 'react-native';
+import {ApolloUploadComponent} from './apollo-upload-component';
 
 function App(): JSX.Element {
   const [isApolloComponentVisible, setIsApolloComponentVisible] =
@@ -15,6 +16,7 @@ function App(): JSX.Element {
         onPress={() => setIsApolloComponentVisible(true)}
       />
       {isApolloComponentVisible && <ApolloTestComponent />}
+      {isApolloComponentVisible && <ApolloUploadComponent />}
 
       <Button
         title="fetch google.com"

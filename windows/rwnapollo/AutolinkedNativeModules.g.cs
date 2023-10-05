@@ -2,12 +2,17 @@
 
 using System.Collections.Generic;
 
+// Namespaces from react-native-document-picker
+using ReactNativeDocumentPicker;
+
 namespace Microsoft.ReactNative.Managed
 {
     internal static class AutolinkedNativeModules
     {
         internal static void RegisterAutolinkedNativeModulePackages(IList<IReactPackageProvider> packageProviders)
         { 
+            // IReactPackageProviders from react-native-document-picker
+            packageProviders.Add(new ReactNativeDocumentPicker.ReactPackageProvider());
         }
     }
 }

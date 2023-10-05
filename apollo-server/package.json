@@ -1,0 +1,52 @@
+{
+  "name": "apollo-upload-examples-api",
+  "private": true,
+  "license": "MIT",
+  "author": {
+    "name": "Jayden Seric",
+    "email": "me@jaydenseric.com",
+    "url": "https://jaydenseric.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jaydenseric/apollo-upload-examples.git",
+    "directory": "api"
+  },
+  "homepage": "https://github.com/jaydenseric/apollo-upload-examples#readme",
+  "bugs": "https://github.com/jaydenseric/apollo-upload-examples/issues",
+  "funding": "https://github.com/sponsors/jaydenseric",
+  "engines": {
+    "node": ">= 18.11.0",
+    "npm": ">= 7"
+  },
+  "dependencies": {
+    "@apollo/server": "^4.3.0",
+    "@as-integrations/koa": "^0.2.1",
+    "@koa/cors": "^4.0.0",
+    "dotenv": "^16.0.3",
+    "graphql": "^16.6.0",
+    "graphql-upload": "^16.0.2",
+    "koa": "^2.14.1",
+    "koa-bodyparser": "^4.3.0",
+    "make-dir": "^3.1.0",
+    "shortid": "^2.2.16"
+  },
+  "devDependencies": {
+    "@types/koa": "^2.13.5",
+    "@types/koa__cors": "^3.3.0",
+    "@types/koa-bodyparser": "^4.3.10",
+    "@types/node": "^18.11.18",
+    "eslint": "^8.31.0",
+    "eslint-plugin-simple-import-sort": "^8.0.0",
+    "prettier": "^2.8.2",
+    "typescript": "^4.9.4"
+  },
+  "scripts": {
+    "dev": "node --watch -r dotenv/config server.mjs",
+    "start": "node -r dotenv/config server.mjs",
+    "eslint": "eslint .",
+    "prettier": "prettier -c .",
+    "types": "tsc -p jsconfig.json",
+    "test": "npm run eslint && npm run prettier && npm run types"
+  }
+}

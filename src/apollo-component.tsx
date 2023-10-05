@@ -36,13 +36,13 @@ export function ApolloTestComponent() {
           title="refresh this view"
           onPress={() => setQueryUpdateIndex(i => i + 1)}
         />
-        <DisplayLocations key={queryUpdateIndex} />
+        <LocationsList key={queryUpdateIndex} />
       </View>
     </ApolloProvider>
   );
 }
 
-function DisplayLocations() {
+function LocationsList() {
   const {loading, error, data} = useQuery(GET_LOCATIONS, {
     fetchPolicy: 'no-cache',
   });
