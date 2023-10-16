@@ -6,8 +6,7 @@ import {
   useQuery,
   gql,
 } from '@apollo/client';
-import {Text, View, ScrollView} from 'react-native';
-import {Image, Button} from 'react-native-windows';
+import {Image, Button, Text, View, ScrollView} from 'react-native-windows';
 
 const client = new ApolloClient({
   uri: 'https://flyby-router-demo.herokuapp.com/',

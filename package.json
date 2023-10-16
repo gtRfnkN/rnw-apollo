@@ -8,6 +8,7 @@
     "test": "jest",
     "windows": "react-native run-windows",
     "apollo": "yarn --cwd apollo-server/ dev",
+    "simple-server": "yarn --cwd simple-server/ dev",
     "postinstall": "patch-package"
   },
   "dependencies": {

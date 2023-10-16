@@ -6,8 +6,7 @@ import {
   gql,
   useMutation,
 } from '@apollo/client';
-import {Text, View} from 'react-native';
-import {Button} from 'react-native-windows';
+import {Button, Text, View} from 'react-native-windows';
 import {ReactNativeFile, createUploadLink} from 'apollo-upload-client';
 import DocumentPicker from 'react-native-document-picker';
 

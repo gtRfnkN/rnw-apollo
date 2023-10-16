@@ -1,0 +1,30 @@
+<body>
+    <div class="container">
+        <h1>Multipart File Upload</h1>
+        <form id="form" enctype="multipart/form-data">
+            <div class="input-group">
+                <label for="files">Select files</label>
+                <input id="file" type="file" multiple />
+            </div>
+            <button class="submit-btn" type="submit">Upload</button>
+        </form>
+    </div>
+    <script>
+        const form = document.getElementById('form');
+        const inputFile = document.getElementById('file');
+
+        const handleSubmit = event => {
+            event.preventDefault();
+
+            const formData = new FormData();
+            for (const file of inputFile.files) {
+                formData.append('files', file);
+            }
+            fetch('/upload', {method: 'post', body: formData})
+                .then(result => console.log('Upload done', result))
+                .catch(error => console.error('Something went wrong!', error));
+        };
+
+        form.addEventListener('submit', handleSubmit);
+    </script>
+</body>

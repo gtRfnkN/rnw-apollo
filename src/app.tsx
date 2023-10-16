@@ -1,13 +1,13 @@
 import React from 'react';
-import {Button, SafeAreaView} from 'react-native';
+import {Button, SafeAreaView} from 'react-native-windows';
 import {ApolloTestComponent} from './apollo-component';
-import {Text, View} from 'react-native';
 import {ApolloUploadComponent} from './apollo-upload-component';
+import {FetchLoadTester} from './fetch-download';
+import {FetchUploadBlobTester, FetchUploadFileTester} from './fetch-upload';
 
 function App(): JSX.Element {
   const [isApolloComponentVisible, setIsApolloComponentVisible] =
     React.useState(false);
-  const [hasResponseFromFetch, setHasResponseFromFetch] = React.useState(false);
 
   return (
     <SafeAreaView style={{backgroundColor: '#333'}}>
@@ -18,20 +18,10 @@ function App(): JSX.Element {
       {isApolloComponentVisible && <ApolloTestComponent />}
       {isApolloComponentVisible && <ApolloUploadComponent />}
 
-      <Button
-        title="fetch google.com"
-        onPress={() => {
-          setHasResponseFromFetch(false);
-          fetch('https://google.com')
-            .then(result => result.text())
-            .then(() => setHasResponseFromFetch(true));
-        }}
-      />
-      {hasResponseFromFetch && (
-        <View style={{backgroundColor: '#007700', padding: 32}}>
-          <Text>Fetch was successful</Text>
-        </View>
-      )}
+      <FetchLoadTester />
+
+      <FetchUploadBlobTester />
+      <FetchUploadFileTester />
     </SafeAreaView>
   );
 }
